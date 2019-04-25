@@ -20,9 +20,19 @@ namespace RBAUtils
         public Form1()
         {
             InitializeComponent();
+
+            this.Text = "Ingenico Device RBA Utilities Application";
+
             rebootTime = rbautils.Get24RebootTime();
             Debug.WriteLine("INITIAL REBOOT TIME VALUE={0}", (object)rebootTime);
             this.txtRebootTime.Text = rebootTime;
+        }
+        private void OnDeselectingMainTabPage(object sender, TabControlCancelEventArgs e)
+        {
+            if(this.pictureBox1.Visible)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void OnTextChanged(object sender, EventArgs e)
@@ -41,13 +51,14 @@ namespace RBAUtils
             rbautils.Set24RebootTime(this.txtRebootTime.Text);
             this.button1.Enabled = false;
             this.pictureBox1.Visible = true;
+            this.panel1.Visible = true;
 
             new Thread(() =>
             {
                 Thread.CurrentThread.IsBackground = true;
                 Debug.WriteLine("--------------------------------------------------------------------------------------------------------------------------------");
                 Debug.Write("WAITING FOR DEVICE TO COMPLETE REBOOT[ ");
-                for(int index = 0; index < 35; index ++)
+                for(int index = 0; index < 40; index ++)
                 { 
                     Debug.Write(".");
                     Thread.Sleep(1000);
@@ -60,6 +71,7 @@ namespace RBAUtils
                     Debug.WriteLine("UPDATED REBOOT TIME VALUE={0}", (object)rebootTime);
                     this.txtRebootTime.Text = rebootTime;
                     this.pictureBox1.Visible = false;
+                    this.panel1.Visible = false;
                 }));
             }).Start();;
         }

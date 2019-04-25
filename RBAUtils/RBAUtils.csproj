@@ -24,12 +24,15 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TC-IPA-Shield.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RBA_SDK_CS, Version=5.10.6.0, Culture=neutral, processorArchitecture=x86">
@@ -90,6 +93,7 @@
     <Content Include="Assets\TC-WAIT.gif" />
     <Content Include="sdk\RBA_SDK.dll" />
     <Content Include="sdk\RBA_SDK_CS.dll" />
+    <Content Include="TC-IPA-Shield.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 namespace RBAUtils
 {
-    partial class Form1
+    partial class Application
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,28 @@ namespace RBAUtils
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Application));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtRebootTime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblWarning1 = new System.Windows.Forms.Label();
+            this.lblMessage3 = new System.Windows.Forms.Label();
+            this.lblMessage2 = new System.Windows.Forms.Label();
+            this.lblMessage1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -70,6 +77,38 @@ namespace RBAUtils
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "24REBOOT";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(-1, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(651, 91);
+            this.panel1.TabIndex = 4;
+            this.panel1.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(234, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 42);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "REBOOT";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(-2, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(652, 42);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "WAIT FOR DEVICE TO COMPLETE";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -113,60 +152,86 @@ namespace RBAUtils
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(654, 324);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Messages";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // groupBox1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(-1, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(651, 91);
-            this.panel1.TabIndex = 4;
-            this.panel1.Visible = false;
+            this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.Controls.Add(this.lblWarning1);
+            this.groupBox1.Controls.Add(this.lblMessage3);
+            this.groupBox1.Controls.Add(this.lblMessage2);
+            this.groupBox1.Controls.Add(this.lblMessage1);
+            this.groupBox1.Location = new System.Drawing.Point(-4, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(660, 328);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
-            // label2
+            // lblWarning1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-2, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(652, 42);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "WAIT FOR DEVICE TO COMPLETE";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWarning1.AutoSize = true;
+            this.lblWarning1.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning1.Location = new System.Drawing.Point(7, 49);
+            this.lblWarning1.Name = "lblWarning1";
+            this.lblWarning1.Size = new System.Drawing.Size(35, 44);
+            this.lblWarning1.TabIndex = 3;
+            this.lblWarning1.Text = "!";
             // 
-            // label3
+            // lblMessage3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(234, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 42);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "REBOOT";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMessage3.AutoSize = true;
+            this.lblMessage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage3.Location = new System.Drawing.Point(208, 192);
+            this.lblMessage3.Name = "lblMessage3";
+            this.lblMessage3.Size = new System.Drawing.Size(216, 39);
+            this.lblMessage3.TabIndex = 2;
+            this.lblMessage3.Text = "AND RETRY";
             // 
-            // Form1
+            // lblMessage2
+            // 
+            this.lblMessage2.AutoSize = true;
+            this.lblMessage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage2.Location = new System.Drawing.Point(83, 122);
+            this.lblMessage2.Name = "lblMessage2";
+            this.lblMessage2.Size = new System.Drawing.Size(466, 39);
+            this.lblMessage2.TabIndex = 1;
+            this.lblMessage2.Text = "CHECK FOR RUNNING DAL";
+            // 
+            // lblMessage1
+            // 
+            this.lblMessage1.AutoSize = true;
+            this.lblMessage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage1.Location = new System.Drawing.Point(50, 52);
+            this.lblMessage1.Name = "lblMessage1";
+            this.lblMessage1.Size = new System.Drawing.Size(577, 39);
+            this.lblMessage1.TabIndex = 0;
+            this.lblMessage1.Text = "ERROR CONNECTING TO DEVICE";
+            // 
+            // Application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Application";
+            this.Text = "Application";
+            this.Load += new System.EventHandler(this.OnFormLoad);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -174,15 +239,22 @@ namespace RBAUtils
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
+        // TABPAGE: 1
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtRebootTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        // TABPAGE: 2
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblMessage1;
+        private System.Windows.Forms.Label lblMessage2;
+        private System.Windows.Forms.Label lblMessage3;
+        private System.Windows.Forms.Label lblWarning1;
     }
 }
 

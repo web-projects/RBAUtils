@@ -11,11 +11,31 @@ namespace RBAUtils
     {
         Ingenico _ingenicoDevice = new Ingenico();
 
-        private string commPort = "COM110";
+        private bool Connected;
+        private Dictionary<string, string> commPorts = new Dictionary<string, string>
+        {
+            { "iSC250", "COM109" },
+            { "iPP350", "COM110" },
+            { "iSC480", "COM111" },
+            { "iPP320", "COM113" },
+        };
 
         public RBAUtils()
         {
-            _ingenicoDevice.Connect(commPort, null, IngenicoLoggingLevel.NONE);
+            foreach(var commPort in commPorts.Values)
+            { 
+                string result = _ingenicoDevice.Connect(commPort, null, IngenicoLoggingLevel.NONE);
+                Connected = result.Contains("SUCCESS") ? true : false;
+                if(Connected)
+                {
+                    break;
+                }
+            }
+        }
+
+        public bool IsConnected()
+        {
+            return Connected;
         }
 
         public string Get24RebootTime()
@@ -40,7 +60,7 @@ namespace RBAUtils
 
     class Ingenico
     {
-        private bool Connected = false;
+        private bool Connected;
         public int ComBaudRate = 115200;
         public int ComDataBits = 8;
 

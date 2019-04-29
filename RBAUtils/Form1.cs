@@ -15,24 +15,45 @@ namespace RBAUtils
     public partial class Application : Form
     {
         string rebootTime;
-        RBAUtils rbautils = new RBAUtils();
+        RBAUtils rbautils;
 
         public Application()
         {
             InitializeComponent();
 
             this.Text = "Ingenico Device RBA Utilities Application";
+        }
 
-            if(rbautils.IsConnected())
-            { 
-                tabControl1.TabPages.Remove(tabPage2);
-                rebootTime = rbautils.Get24RebootTime();
-                Debug.WriteLine("INITIAL REBOOT TIME VALUE={0}", (object)rebootTime);
-                this.txtRebootTime.Text = rebootTime;
-            }
-            else
+        private void KillRunningDAL()
+        {
+            var appManager = Process.GetProcesses().Where(pr => pr.ProcessName.Equals("TCIPAAppManager", StringComparison.CurrentCultureIgnoreCase));
+
+            foreach (var process in appManager)
             {
-                tabControl1.TabPages.Remove(tabPage1);
+                try
+                { 
+                    ProcessStartInfo startInfo = new ProcessStartInfo();
+                    startInfo.FileName = "wmic";
+                    startInfo.Arguments = "process where name='TCIPAAppManager.exe' delete";
+                    startInfo.RedirectStandardOutput = true;
+                    startInfo.RedirectStandardError = true;
+                    startInfo.UseShellExecute = false;
+                    startInfo.CreateNoWindow = true;
+                    Process processTemp = new Process();
+                    processTemp.StartInfo = startInfo;
+                    processTemp.EnableRaisingEvents = true;
+
+                    processTemp.Start();
+
+                    startInfo.Arguments = "process where name='TCIPADAL.exe' delete";
+                    processTemp.Start();
+
+                    Thread.Sleep(2500);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
 
@@ -55,18 +76,48 @@ namespace RBAUtils
 
         private void OnFormLoad(object sender, EventArgs e)
         {
-            if(!rbautils.IsConnected())
-            { 
-                new Thread(() => 
+            tabControl1.TabPages.Remove(tabPage2);
+            this.pictureBox1.Visible = true;
+            this.label2.Visible = false;
+            this.label3.Visible = false;
+            this.label4.Visible = true;
+            this.panel1.Visible = true;
+
+            new Thread(() => 
+            {
+                KillRunningDAL();
+
+                rbautils = new RBAUtils();
+
+                this.Invoke(new MethodInvoker(() =>
                 {
-                    SoftBlink(lblWarning1, Color.FromArgb(30, 30, 30), Color.Red, 2000, true);
-                    SoftBlink(lblMessage1, Color.FromArgb(30, 30, 30), Color.Green, 2000, true);
-                    SoftBlink(lblMessage2, Color.FromArgb(30, 30, 30), Color.Green, 2000, true);
-                    SoftBlink(lblMessage3, Color.FromArgb(30, 30, 30), Color.Green, 2000, true);
-                    Thread.Sleep(6000);
-                    System.Diagnostics.Process.GetCurrentProcess().Kill();
-                }).Start();
-            }
+                    this.label4.Visible = false;
+                    this.pictureBox1.Visible = false;
+                    this.panel1.Visible = false;
+
+                    if(rbautils.IsConnected())
+                    { 
+                        rebootTime = rbautils.Get24RebootTime();
+                        Debug.WriteLine("INITIAL REBOOT TIME VALUE={0}", (object)rebootTime);
+                        this.txtRebootTime.Text = rebootTime;
+                    }
+                    else
+                    {
+                        tabControl1.TabPages.Add(tabPage2);
+                        tabControl1.TabPages.Remove(tabPage1);
+
+                        new Thread(() => 
+                        {
+                            SoftBlink(lblWarning1, Color.FromArgb(30, 30, 30), Color.Red, 2000, true);
+                            SoftBlink(lblMessage1, Color.FromArgb(30, 30, 30), Color.Green, 2000, true);
+                            SoftBlink(lblMessage2, Color.FromArgb(30, 30, 30), Color.Green, 2000, true);
+                            SoftBlink(lblMessage3, Color.FromArgb(30, 30, 30), Color.Green, 2000, true);
+                            Thread.Sleep(6000);
+                            System.Diagnostics.Process.GetCurrentProcess().Kill();
+                        }).Start();
+                    }
+                }));
+            }).Start();
         }
 
         private void OnDeselectingMainTabPage(object sender, TabControlCancelEventArgs e)
@@ -94,6 +145,8 @@ namespace RBAUtils
             this.button1.Enabled = false;
             this.pictureBox1.Visible = true;
             this.panel1.Visible = true;
+            this.label2.Visible = true;
+            this.label3.Visible = true;
 
             new Thread(() =>
             {
@@ -106,9 +159,9 @@ namespace RBAUtils
                     Thread.Sleep(1000);
                 }
                 Debug.WriteLine(" ] - ONLINE");
+                rbautils = new RBAUtils();
                 this.Invoke(new MethodInvoker(() =>
                 {
-                    rbautils = new RBAUtils();
                     rebootTime = rbautils.Get24RebootTime();
                     Debug.WriteLine("UPDATED REBOOT TIME VALUE={0}", (object)rebootTime);
                     this.txtRebootTime.Text = rebootTime;

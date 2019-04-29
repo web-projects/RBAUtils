@@ -26,3 +26,4 @@ This an application to Configure Ingenico Devices.
 
 * 20190425 - Initial repository.
 * 20190426 - Aded additional ports to check.
+* 20190429 - Added AppManager/DAL detection and termination logic.

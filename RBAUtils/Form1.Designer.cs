@@ -44,6 +44,7 @@ namespace RBAUtils
             this.lblMessage3 = new System.Windows.Forms.Label();
             this.lblMessage2 = new System.Windows.Forms.Label();
             this.lblMessage1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,6 +81,7 @@ namespace RBAUtils
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(-1, 5);
@@ -214,6 +216,18 @@ namespace RBAUtils
             this.lblMessage1.TabIndex = 0;
             this.lblMessage1.Text = "ERROR CONNECTING TO DEVICE";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(77, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(496, 42);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "SEARCHING FOR DEVICE";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Visible = false;
+            // 
             // Application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +258,7 @@ namespace RBAUtils
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtRebootTime;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         // TABPAGE: 2
         private System.Windows.Forms.TabPage tabPage2;

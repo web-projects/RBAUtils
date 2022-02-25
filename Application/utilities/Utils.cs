@@ -8,22 +8,22 @@ namespace RBAUtils.Utilities
         Ingenico _ingenicoDevice = new Ingenico();
 
         private bool Connected;
-        private Dictionary<string, string> commPorts = new Dictionary<string, string>
+        private string devicePort;
+
+        private List<string> commPorts = new List<string>
         {
-            { "iSC250", "COM109" },
-            { "iPP350", "COM110" },
-            { "iSC480", "COM111" },
-            { "iPP320", "COM113" },
+             "COM109" , "COM110" , "COM111", "COM112", "COM113","COM35"
         };
 
         public Utils()
         {
-            foreach (var commPort in commPorts.Values)
+            foreach (var commPort in commPorts)
             {
                 string result = _ingenicoDevice.Connect(commPort, null, Enums.IngenicoLoggingLevel.NONE);
                 Connected = result.Contains("SUCCESS") ? true : false;
                 if (Connected)
                 {
+                    devicePort = commPort;
                     break;
                 }
             }
@@ -32,6 +32,11 @@ namespace RBAUtils.Utilities
         public bool IsConnected()
         {
             return Connected;
+        }
+
+        public string GetDeviceConnectedPort()
+        {
+            return devicePort;
         }
 
         public string GetTerminalModel()
@@ -44,6 +49,10 @@ namespace RBAUtils.Utilities
             return _ingenicoDevice.GetTerminalSerialNumber();
         }
 
+        public string GetDevicePartNumber()
+        {
+            return _ingenicoDevice.GetDevicePartNumber();
+        }
         public string GetTerminalTimeStamp()
         {
             string terminalTime = _ingenicoDevice.GetTerminalTimeStamp();

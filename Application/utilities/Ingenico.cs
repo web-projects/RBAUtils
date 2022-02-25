@@ -6,6 +6,7 @@ namespace RBAUtils.utilities
     public class Ingenico
     {
         private Health DeviceHealth { get; set; }
+        private Info DeviceInfo { get; set; }
         private bool Connected;
 
         public int ComBaudRate = 115200;
@@ -42,6 +43,7 @@ namespace RBAUtils.utilities
                 //}
 
                 GetDeviceHealth();
+                GetDeviceInfo();
             }
 
             return result.ToString();
@@ -119,6 +121,12 @@ namespace RBAUtils.utilities
             DeviceHealth.GetDeviceHealth();
         }
 
+        private void GetDeviceInfo()
+        {
+            DeviceInfo = new Info();
+            DeviceInfo.GetDeviceInfo();
+        }
+
         #region    --- RBA API ---
         public string GetVariable_29(string varId)
         {
@@ -171,6 +179,11 @@ namespace RBAUtils.utilities
         public string GetTerminalSerialNumber()
         {
               return DeviceHealth.MANUFACTURING_SERIAL_NUMBER;
+        }
+
+        public string GetDevicePartNumber()
+        {
+            return DeviceInfo.DEVICE;
         }
 
         public string GetTerminalTimeStamp()

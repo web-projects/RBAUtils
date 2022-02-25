@@ -1,11 +1,10 @@
-C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.csproj.AssemblyReference.cache
+C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\bin\Debug\net461\Helpers.dll
+C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\bin\Debug\net461\Helpers.pdb
+C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\bin\Debug\net461\Newtonsoft.Json.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.GeneratedMSBuildEditorConfig.editorconfig
 C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.AssemblyInfoInputs.cache
 C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.AssemblyInfo.cs
 C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.csproj.CoreCompileInputs.cache
-C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\bin\Debug\net461\Helpers.dll
-C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\bin\Debug\net461\Helpers.pdb
-C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\bin\Debug\net461\Newtonsoft.Json.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.csproj.CopyComplete
 C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Common\Helpers\obj\Debug\net461\Helpers.pdb

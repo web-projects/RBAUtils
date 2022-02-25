@@ -1,9 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RBAUtils", "RBAUtils\RBAUtils.csproj", "{7ACD63EC-1C58-4D94-90B4-31E2BBAA22A3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{4B6F6C86-4601-4E91-976B-1A55CDD3D615}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LoggerManager", "LoggerManager", "{CC483EA5-8FFB-4574-940E-F2FCB2A916AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerManager", "Common\LoggerManager\LoggerManager.csproj", "{B619E1C7-5710-4B7B-8635-A65FE5CDD6B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{A3C0EE34-40E6-44D8-8B09-123D3BCE343B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Common\Helpers\Helpers.csproj", "{B6DA77AB-9674-4CB3-B2A5-F7E375C6CF8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{9D062308-8E64-4E80-BFCB-0E78613208A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RBAUtils", "Application\RBAUtils.csproj", "{7ACD63EC-1C58-4D94-90B4-31E2BBAA22A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +23,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B619E1C7-5710-4B7B-8635-A65FE5CDD6B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B619E1C7-5710-4B7B-8635-A65FE5CDD6B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B619E1C7-5710-4B7B-8635-A65FE5CDD6B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B619E1C7-5710-4B7B-8635-A65FE5CDD6B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DA77AB-9674-4CB3-B2A5-F7E375C6CF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DA77AB-9674-4CB3-B2A5-F7E375C6CF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DA77AB-9674-4CB3-B2A5-F7E375C6CF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DA77AB-9674-4CB3-B2A5-F7E375C6CF8A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7ACD63EC-1C58-4D94-90B4-31E2BBAA22A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7ACD63EC-1C58-4D94-90B4-31E2BBAA22A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ACD63EC-1C58-4D94-90B4-31E2BBAA22A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -18,6 +38,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC483EA5-8FFB-4574-940E-F2FCB2A916AB} = {4B6F6C86-4601-4E91-976B-1A55CDD3D615}
+		{B619E1C7-5710-4B7B-8635-A65FE5CDD6B4} = {CC483EA5-8FFB-4574-940E-F2FCB2A916AB}
+		{A3C0EE34-40E6-44D8-8B09-123D3BCE343B} = {4B6F6C86-4601-4E91-976B-1A55CDD3D615}
+		{B6DA77AB-9674-4CB3-B2A5-F7E375C6CF8A} = {A3C0EE34-40E6-44D8-8B09-123D3BCE343B}
+		{7ACD63EC-1C58-4D94-90B4-31E2BBAA22A3} = {9D062308-8E64-4E80-BFCB-0E78613208A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06E4E959-C074-4FD5-A8BC-279DC003AD05}

@@ -1,0 +1,13 @@
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\bin\Debug\netstandard2.0\LoggerManager.deps.json
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\bin\Debug\netstandard2.0\LoggerManager.dll
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\bin\Debug\netstandard2.0\LoggerManager.pdb
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\bin\Debug\netstandard2.0\Helpers.dll
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\bin\Debug\netstandard2.0\Helpers.pdb
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.csproj.AssemblyReference.cache
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.AssemblyInfoInputs.cache
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.AssemblyInfo.cs
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.csproj.CoreCompileInputs.cache
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.csproj.CopyComplete
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.dll
+C:\Development\DEVICES\ingenico\RBAUtils\Common\LoggerManager\obj\Debug\netstandard2.0\LoggerManager.pdb

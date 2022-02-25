@@ -129,6 +129,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utilities\Health.cs" />
+    <Compile Include="utilities\Info.cs" />
     <Compile Include="utilities\Ingenico.cs" />
     <Compile Include="utilities\Enums.cs" />
     <Compile Include="utilities\Utils.cs" />

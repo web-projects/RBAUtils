@@ -1,3 +1,9 @@
+C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.csproj.AssemblyReference.cache
+C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.Application.resources
+C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.Properties.Resources.resources
+C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.csproj.GenerateResource.cache
+C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.csproj.CoreCompileInputs.cache
+C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\appsettings.json
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\RBAUtils.exe.config
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\RBAUtils.exe
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\RBAUtils.pdb
@@ -6,6 +12,7 @@ C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Bcl.Asy
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.Json.dll
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll
@@ -29,6 +36,7 @@ C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Bcl.Asy
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.xml
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.EnvironmentVariables.xml
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.xml
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.Json.xml
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.xml
@@ -44,14 +52,6 @@ C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\System.Text.Json.
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\System.ValueTuple.xml
 C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Helpers.pdb
-C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.csproj.AssemblyReference.cache
-C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.Application.resources
-C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.Properties.Resources.resources
-C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.csproj.GenerateResource.cache
-C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.csproj.CoreCompileInputs.cache
 C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.csproj.CopyComplete
 C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.exe
 C:\Development\DEVICES\ingenico\RBAUtils\Application\obj\Debug\RBAUtils.pdb
-C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
-C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\Microsoft.Extensions.Configuration.EnvironmentVariables.xml
-C:\Development\DEVICES\ingenico\RBAUtils\Application\bin\Debug\appsettings.json

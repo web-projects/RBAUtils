@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,10 +14,12 @@ namespace RBAUtils
 {
     public partial class Application : Form
     {
+        string terminalPort;
         string terminalModel;
         string terminalSerialNumber;
         string terminalTime;
         string rebootTime;
+        string devicePartNumber;
 
         Utils rbautils;
 
@@ -24,7 +27,7 @@ namespace RBAUtils
         {
             InitializeComponent();
 
-            this.Text = "Ingenico Device RBA Utilities Application";
+            this.Text = $"Ingenico Device RBA Utilities Application - {Assembly.GetEntryAssembly().GetName().Version}";
         }
 
         private void KillRunningDAL()
@@ -104,6 +107,8 @@ namespace RBAUtils
 
                     if (rbautils.IsConnected())
                     {
+                        this.txtTerminalPort.Text = terminalPort = rbautils.GetDeviceConnectedPort();
+                        Logger.info($"TERMINAL COMM PORT={(object)terminalPort}");
                         this.txtTerminalModel.Text = terminalModel = rbautils.GetTerminalModel();
                         Logger.info($"INITIAL TERMINAL MODEL={(object)terminalModel}"); 
                         this.txtTerminalSN.Text = terminalSerialNumber = rbautils.GetTerminalSerialNumber();
@@ -112,6 +117,8 @@ namespace RBAUtils
                         Logger.info($"INITIAL TERMINAL TIME VALUE={(object)terminalTime}");
                         this.txtTerminalRebootTime.Text = rebootTime = rbautils.Get24RebootTime();
                         Logger.info($"INITIAL REBOOT TIME VALUE={(object)rebootTime}");
+                        this.txtTerminalPartNum.Text = devicePartNumber = rbautils.GetDevicePartNumber();
+                        Logger.info($"DEVICE PART NUMBER={(object)devicePartNumber}");
                         await Task.Run(async () => 
                         { 
                             await Task.Delay(500);
@@ -187,6 +194,8 @@ namespace RBAUtils
                 rbautils = new Utils();
                 this.Invoke(new MethodInvoker(async () =>
                 {
+                    this.txtTerminalPort.Text = terminalPort = rbautils.GetDeviceConnectedPort();
+                    Logger.info($"TERMINAL COMM PORT={(object)terminalPort}");
                     this.txtTerminalModel.Text = terminalModel = rbautils.GetTerminalModel();
                     Logger.info($"INITIAL TERMINAL MODEL={(object)terminalModel}");
                     this.txtTerminalSN.Text = terminalSerialNumber = rbautils.GetTerminalSerialNumber();

@@ -1,5 +1,6 @@
 ﻿using RBA_SDK;
 using System;
+using System.Xml.Serialization;
 
 namespace RBAUtils.utilities
 {
@@ -121,10 +122,29 @@ namespace RBAUtils.utilities
             DeviceHealth.GetDeviceHealth();
         }
 
+        public string GetDeviceHealthText()
+        {
+            using (var stringwriter = new System.IO.StringWriter())
+            {
+                var serializer = new XmlSerializer(typeof(Health));
+                serializer.Serialize(stringwriter, DeviceHealth);
+                return stringwriter.ToString();
+            }
+        }
         private void GetDeviceInfo()
         {
             DeviceInfo = new Info();
             DeviceInfo.GetDeviceInfo();
+        }
+
+        public string GetDeviceInfoText()
+        {
+            using (var stringwriter = new System.IO.StringWriter())
+            {
+                var serializer = new XmlSerializer(typeof(Info));
+                serializer.Serialize(stringwriter, DeviceInfo);
+                return stringwriter.ToString();
+            }
         }
 
         #region    --- RBA API ---
@@ -179,6 +199,11 @@ namespace RBAUtils.utilities
         public string GetTerminalSerialNumber()
         {
               return DeviceHealth.MANUFACTURING_SERIAL_NUMBER;
+        }
+
+        public string GetFirmwareVersion()
+        {
+            return DeviceInfo.APPLICATION_VERSION;
         }
 
         public string GetDevicePartNumber()

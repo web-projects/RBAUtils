@@ -1,12 +1,9 @@
 ﻿using RBA_SDK;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RBAUtils.utilities
 {
+    [Serializable]
     public class Info
     {
         public ERROR_ID RESULT { get; set; }

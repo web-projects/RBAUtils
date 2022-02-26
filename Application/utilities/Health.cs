@@ -1,7 +1,9 @@
 ﻿using RBA_SDK;
+using System;
 
 namespace RBAUtils.utilities
 {
+    [Serializable]
     public class Health
     {
         public ERROR_ID RESULT { get; set; }

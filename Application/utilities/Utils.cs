@@ -20,7 +20,7 @@ namespace RBAUtils.Utilities
             foreach (var commPort in commPorts)
             {
                 string result = _ingenicoDevice.Connect(commPort, null, Enums.IngenicoLoggingLevel.NONE);
-                Connected = result.Contains("SUCCESS") ? true : false;
+                Connected = result.Contains("SUCCESS") || result.Contains("RESULT_ERROR_ALREADY_CONNECTED") ? true : false;
                 if (Connected)
                 {
                     devicePort = commPort;
@@ -53,6 +53,12 @@ namespace RBAUtils.Utilities
         {
             return _ingenicoDevice.GetDevicePartNumber();
         }
+
+        public string GetFirmWareVersion()
+        {
+            return _ingenicoDevice.GetFirmwareVersion();
+        }
+
         public string GetTerminalTimeStamp()
         {
             string terminalTime = _ingenicoDevice.GetTerminalTimeStamp();
@@ -76,6 +82,16 @@ namespace RBAUtils.Utilities
                 _ingenicoDevice.Offline();
                 _ingenicoDevice.HardDeviceReset();
             }
+        }
+
+        public string GetDeviceHealth()
+        {
+            return _ingenicoDevice.GetDeviceHealthText();
+        }
+
+        public string GetDeviceInfo()
+        {
+            return _ingenicoDevice.GetDeviceInfoText();
         }
     }
 }

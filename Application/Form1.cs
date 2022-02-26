@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,9 @@ namespace RBAUtils
         string terminalTime;
         string rebootTime;
         string devicePartNumber;
-
+        string firmwareVersion;
+        string deviceHealth;
+        string deviceInfo;
         Utils rbautils;
 
         public Application()
@@ -119,6 +122,11 @@ namespace RBAUtils
                         Logger.info($"INITIAL REBOOT TIME VALUE={(object)rebootTime}");
                         this.txtTerminalPartNum.Text = devicePartNumber = rbautils.GetDevicePartNumber();
                         Logger.info($"DEVICE PART NUMBER={(object)devicePartNumber}");
+                        this.txtFirmwareVersion.Text = firmwareVersion = rbautils.GetFirmWareVersion();
+                        Logger.info($"DEVICE FIRMWARE VERSION={(object)firmwareVersion}");
+
+                        Logger.info($"DEVICE HEALTH={rbautils.GetDeviceHealth()}");
+                        Logger.info($"DEVICE INFO DETAIL={rbautils.GetDeviceInfo()}");
                         await Task.Run(async () => 
                         { 
                             await Task.Delay(500);
@@ -168,8 +176,26 @@ namespace RBAUtils
             }
         }
 
+        private bool validateRebootTimeText(string text)
+        {
+            string pattern = "^([0[0-9]|1[0-9]|2[0-3])[0-5][0-9]";
+            Regex rg = new Regex(pattern);
+            Match matches = rg.Match(text);
+            if(matches.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!validateRebootTimeText(this.txtTerminalRebootTime.Text))
+            {
+                return;
+            }
             rbautils.Set24RebootTime(this.txtTerminalRebootTime.Text);
 
             this.panel1.Visible = false;
@@ -191,6 +217,7 @@ namespace RBAUtils
                     Thread.Sleep(1000);
                 }
                 Debug.WriteLine(" ] - ONLINE");
+
                 rbautils = new Utils();
                 this.Invoke(new MethodInvoker(async () =>
                 {
@@ -204,6 +231,13 @@ namespace RBAUtils
                     Logger.info($"INITIAL TERMINAL TIME VALUE={(object)terminalTime}");
                     this.txtTerminalRebootTime.Text = rebootTime = rbautils.Get24RebootTime();
                     Logger.info($"UPDATED REBOOT TIME VALUE={(object)rebootTime}");
+                    this.txtTerminalPartNum.Text = devicePartNumber = rbautils.GetDevicePartNumber();
+                    Logger.info($"DEVICE PART NUMBER={(object)devicePartNumber}");
+                    this.txtFirmwareVersion.Text = firmwareVersion = rbautils.GetFirmWareVersion();
+                    Logger.info($"DEVICE FIRMWARE VERSION={(object)firmwareVersion}");
+
+                    Logger.info($"DEVICE HEALTH={rbautils.GetDeviceHealth()}");
+                    Logger.info($"DEVICE INFO DETAIL={rbautils.GetDeviceInfo()}");
                     this.panel2.Visible = false;
                     this.pictureWaitDisplay.Visible = false;
                     this.panel1.Visible = true;
@@ -217,7 +251,7 @@ namespace RBAUtils
                         }));
                     });
                 }));
-            }).Start(); ;
+            }).Start();
         }
     }
 }
